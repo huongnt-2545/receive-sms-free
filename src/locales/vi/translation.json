@@ -1,0 +1,30 @@
+{
+  "application": {
+    "title": "Free US phone number +14342984462,Receive Sms online US for free - Receive-Sms-Free.Net",
+    "keywords": "Free US phone number,US temporary mobile number,Free US virtual phone number,US phone number receive sms free,receive sms online US,+14342984462",
+    "description": "Free US phone number +14342984462 Receive Sms online,You can use this free US mobile number to receive verification code activation services for apps or websites like WhatsApp, facebook,etc."
+  },
+  "about_us": {
+    "title": "About this free US phone number",
+    "body": "1). Keep your privacy with this free US temporary phone number, Receive sms online without registration or personal number."
+  },
+  "phone_messages": {
+    "from": "From",
+    "time": "Time",
+    "message": "Message",
+    "click_to_copy": "( Click to copy the phone number )",
+    "refresh_get_new_message": "Refresh this page to get the new message.",
+    "anyone_can_see": "Anyone can see the message of this number",
+    "new_messages_will_arrive": "New messages will arrive in about 1 minutes.",
+    "change_phone_number": "Change Phone Number",
+    "update_latest_sms": "Update the latest SMS",
+    "please_change_a_number": "Did not receive the message for a long time, please change a number",
+    "list_messages": "List the latest {{count}} messages received"
+  },
+  "shared": {
+    "not_found": {
+      "phone_number": "Can't find phone number",
+      "base_message": "Unable to find the requested resource!"
+    }
+  }
+}
