@@ -1,0 +1,43 @@
+extend layout/application.pug
+block extra_stylesheet
+  link(type='text/css' rel='stylesheet' href='/css/detail-phone.css')
+block content
+  .contain
+      .casedetails
+        .layout
+          .case-tou.clearfix
+            .name(style='border: 0; width: 100%; text-align: center')
+              p.phone-country
+                a(href="#") US Phone Number
+              h1.copys.btn2.phone-number
+                = phoneNumber
+              p#copystate(style='margin-bottom: 10px')= t('phone_messages.click_to_copy')
+              p
+                span.action-description ➊
+                = t('phone_messages.refresh_get_new_message')
+              p
+                span.action-description ➋
+                = t('phone_messages.new_messages_will_arrive')
+              p
+                span.action-description ➌
+                = t('phone_messages.anyone_can_see')
+              div.update-latest-sms
+                button.btn-primary.btn
+                  b= t('phone_messages.update_latest_sms')
+              p= t('phone_messages.list_messages', { count: messages.length })
+              div.update-latest-sms
+                button.btn-primary.btn
+                  b= t('phone_messages.change_phone_number')
+              p= t('phone_messages.please_change_a_number')
+          .casetext
+            .row.border-bottom.table-primary.mobile_hide
+              .col-xs-0.col-md-2.mobile_hide.font-weight-bold= t('phone_messages.from')
+              .col-xs-0.col-md-2.mobile_hide.font-weight-bold= t('phone_messages.time')
+              .col-xs-0.col-md-8.mobile_hide.font-weight-bold= t('phone_messages.message')
+            each val in messages
+              .row.border-bottom.table-hover.bg-messages
+                .col-xs-12.col-md-2
+                  .mobile_hide= val.from
+                  .mobile_show.message_head= val.from
+                .col-xs-0.col-md-2.mobile_hide= moment(val.date_sent).fromNow()
+                .col-xs-12.col-md-8= val.body
