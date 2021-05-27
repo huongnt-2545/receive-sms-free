@@ -1,7 +1,8 @@
 import { model, Schema, Model } from 'mongoose';
+import { ICountry } from './country.model';
 
 export interface IPhoneNumber extends Document {
-  country_id: string;
+  country_id: ICountry['_id'];
   phone_number: string;
   is_active: boolean;
 }

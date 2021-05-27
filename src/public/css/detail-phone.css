@@ -1,0 +1,25 @@
+.phone-country {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+.phone-number {
+  font-size: 24px;
+  margin-top: 25px;
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+}
+
+.case-tou .name span.action-description {
+  font-size: 22px;
+  color: #007bff;
+  margin-top: -5px;
+}
+
+.update-latest-sms {
+  padding: 10px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
