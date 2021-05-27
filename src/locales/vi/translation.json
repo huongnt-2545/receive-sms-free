@@ -33,6 +33,21 @@
       "have_not_phone_numbers": "Have not any phone numbers!"
     }
   },
+  "phone_numbers": {
+    "inactive": {
+      "receive_sms_onl": "Receive SMS online Free",
+      "invalid_phone_number": "Invalid phone numbers",
+      "use_free_phone_number": "How to use these Free Phone Numbers",
+      "phones_are_offline": "These phone numbers are offline",
+      "have_not_phone_numbers": "Have not any inactive phone numbers!"
+    },
+    "show": {
+      "status": {
+        "offline": "Number offline",
+        "online": "Number online"
+      }
+    }
+  },
   "shared": {
     "not_found": {
       "phone_number": "Can't find phone number",

@@ -1,0 +1,17 @@
+.animate-item {
+  visibility: visible;
+  animation-delay: 0s;
+  animation-name: fadeInUp;
+}
+
+.important-height-auto {
+  height: auto !important;
+}
+
+.margin-top-100 {
+  margin-top: 100px;
+}
+
+.text-center {
+  text-align: center;
+}
