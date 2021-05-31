@@ -8,7 +8,7 @@ import { validateCountryCode } from '../validations/country.validation';
 export const getPhoneNumbers = async(req: Request, res: Response) => {
   try {
     const countryCode = req.params.code;
-    if (!validateCountryCode(countryCode)) res.status(404)
+    if (!validateCountryCode(countryCode)) return res.render('404');
 
     const country = await getCountry(countryCode);
     if (!country) return res.render('404');
