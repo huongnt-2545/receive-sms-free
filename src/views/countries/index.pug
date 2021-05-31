@@ -1,0 +1,17 @@
+extend ../layout/application
+block content
+  .contain
+      .casedetails
+        .layout
+          .case-tou.clearfix
+            .index-case
+              ul#ul.clearfix
+                each country in countries
+                  li.wow.fadeInUp
+                    .pic
+                      img(src='/images/flags/us.png')
+                    a(href='/regions/' + country.code)
+                      h2.h2
+                        span= country.name
+                else
+                  li= t('shared.not_data')

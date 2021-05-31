@@ -1,0 +1,7 @@
+mixin showErrorMessage(errors)
+  if errors
+    #error_explanation
+      h2= t('shared.number_of_errors', { count: errors.length })
+      ul
+        each error in errors
+          li= error["msg"]
