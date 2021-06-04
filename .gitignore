@@ -1,3 +1,7 @@
 dist
 node_modules
 .env
+npm-debug.log
+yarn.lock
+package-lock.json
+src/locales/vi/translation.missing.json

@@ -1,0 +1,60 @@
+# Access mongo shell script, type command
+mongo
+
+# Create DB
+use nodejs-training-framework
+
+# Create collections (tables)
+db.createCollection("countries")
+db.createCollection("phone_numbers")
+db.createCollection("messages")
+db.createCollection("users")
+
+# Insert document (data)
+## countries
+db.countries.insertMany([
+    {
+        code: "US",
+        name: "United State",
+        dial_code: "01"
+    },
+    {
+        code: "UK",
+        name: "United Kingdom",
+        dial_code: "44"
+    }
+])
+
+## phone_numbers
+db.phone_numbers.insertMany([
+    {
+        country_id: db.countries.findOne()._id,
+        phone_number: "098765444",
+        is_active: true
+    },
+    {
+        country_id: db.countries.findOne()._id,
+        phone_number: "1111111111",
+        is_active: true
+    },
+    {
+        country_id: db.countries.findOne()._id,
+        phone_number: "2222222222",
+        is_active: true
+    },
+    {
+        country_id: db.countries.findOne()._id,
+        phone_number: "3333333333",
+        is_active: true
+    },
+    {
+        country_id: db.countries.findOne()._id,
+        phone_number: "4444444444",
+        is_active: true
+    },
+    {
+        country_id: db.countries.findOne()._id,
+        phone_number: "5555555555",
+        is_active: true
+    }
+])

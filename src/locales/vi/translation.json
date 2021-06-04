@@ -21,10 +21,23 @@
     "please_change_a_number": "Did not receive the message for a long time, please change a number",
     "list_messages": "List the latest {{count}} messages received"
   },
+  "countries": {
+    "show": {
+      "receive_sms_onl": "  Receive SMS online {{country_code}}",
+      "free_mobile_number": "{{phone_number_total}} Free {{country_code}} temporary mobile numbers in total",
+      "use_free_phone_number": "How to use these Free {{country_code}} Phone Numbers",
+      "select_free_number": "  Select a free phone number in the list below",
+      "fill_in_number": "  Fill in the number when you register account",
+      "click_receive_sms": "  Click \"Receive SMS\" & wait one min for SMS",
+      "receive_sms": "Receive SMS",
+      "have_not_phone_numbers": "Have not any phone numbers!"
+    }
+  },
   "shared": {
     "not_found": {
       "phone_number": "Can't find phone number",
       "base_message": "Unable to find the requested resource!"
-    }
+    },
+    "internal_server_err": "Something went wrong!!!"
   }
 }

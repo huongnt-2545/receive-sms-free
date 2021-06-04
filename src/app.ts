@@ -33,6 +33,7 @@ app.use(i18nextMiddleware.handle(i18next));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 app.use(express.static('html'));
+app.use(express.static(__dirname + '/public'));
 app.use('/', routes);
 app.use((req, res) => {
   res.status(404).send(req.t('shared.not_found.base_message'));

@@ -1,0 +1,38 @@
+extend ../layout/application.pug
+block extra_stylesheet
+  link(type='text/css' rel='stylesheet' href='/css/detail-country.css')
+block content
+  .contain(style='height: auto !important; margin-top: 100px')
+    .news-warp
+      .layout.phone-numbers-list
+        .index-title.wow
+          h1.phone-number-title
+            img(src='/images/flags/us.png' height='25')
+            a(href='/regions/' + country.code)= t('countries.show.receive_sms_onl', {country_code: country.code})
+            i  +#{country.dial_code}
+          p= t('countries.show.free_mobile_number', {phone_number_total: phoneNumbers.length, country_code: country.code})
+        .index-title.wow
+          span.font-size-20= t('countries.show.use_free_phone_number', {country_code: country.code})
+          p
+            i.use-phone-step &#x278A;
+            = t('countries.show.select_free_number')
+          p
+            i.use-phone-step &#x278B;
+            = t('countries.show.fill_in_number')
+          p
+            i.use-phone-step &#x278C;
+            = t('countries.show.click_receive_sms')
+          p.margin-top-10
+      .layout
+        .index-case.margin-top-30
+          ul(class='clearfix' id='ul')
+            each phone in phoneNumbers
+              li.wow.fadeInUp(data-wow-delay='0s')
+                div.pic
+                  img(src='/images/flags/us.png')
+                a(href='/phone-number/' + phone.phone_number)
+                  h2.h2
+                    span +#{country.dial_code} #{phone.phone_number}
+                    i= t('countries.show.receive_sms')
+            else
+              p.font-size-20(style='text-align: center')= t('countries.show.have_not_phone_numbers')
