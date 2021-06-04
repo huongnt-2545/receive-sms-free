@@ -1,0 +1,10 @@
+extend ../../layout/application
+include form
+
+block content
+  .contain
+      .casedetails
+        .layout
+          .case-tou.clearfix
+            .col-md-6.col-md-offset-3
+              +showFormCountry(formData, errors)
