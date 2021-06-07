@@ -9,7 +9,7 @@ block content
             .name(style='border: 0; width: 100%; text-align: center')
               p.phone-country
                 a(href="#") US Phone Number
-              h1.copys.btn2.phone-number
+              h1.copys.btn2.phone-number(data-toggle='tooltip', data-original-title= phoneNumber)
                 = phoneNumber
               p#copystate(style='margin-bottom: 10px')= t('phone_messages.click_to_copy')
               p
