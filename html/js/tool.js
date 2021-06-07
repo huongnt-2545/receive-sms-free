@@ -1,3 +1,22 @@
+$(document).on('click', '.copys', function () {
+  var phoneNumber = $(this).html();
+  copyToClipboard(phoneNumber);
+  setTooltip(this, 'Phone Number Copied!');
+  hideTooltip(this);
+});
+
+function copyToClipboard(str) {
+  var el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+}
+
 function setTooltip(btn, message) {
   $(btn).tooltip('hide').attr('data-original-title', message).tooltip('show');
 }
@@ -6,21 +25,3 @@ function hideTooltip(btn) {
     $(btn).tooltip('hide');
   }, 2000);
 }
-var clipboard1 = new Clipboard('h1');
-clipboard1.on('success', function (e) {
-  setTooltip(e.trigger, 'Phone Number Copied!');
-  hideTooltip(e.trigger);
-});
-clipboard1.on('error', function (e) {
-  setTooltip(e.trigger, 'Failed!');
-  hideTooltip(e.trigger);
-});
-var clipboard2 = new Clipboard('span');
-clipboard2.on('success', function (e) {
-  setTooltip(e.trigger, 'Code Copied!');
-  hideTooltip(e.trigger);
-});
-clipboard2.on('error', function (e) {
-  setTooltip(e.trigger, 'Failed!');
-  hideTooltip(e.trigger);
-});
