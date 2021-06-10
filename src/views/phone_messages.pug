@@ -10,7 +10,9 @@ block content
               p.phone-country
                 a(href="#") US Phone Number
               h1.copys.btn2.phone-number
-                = phoneNumber
+                = phoneNumber 
+                img(src='/images/' + (phoneNumber.is_active ? 'status1.png' : 'status0.png') 
+                  title=(phoneNumber.is_active ? t('phone_numbers.show.status.online') : t('phone_numbers.show.status.offline')))
               p#copystate(style='margin-bottom: 10px')= t('phone_messages.click_to_copy')
               p
                 span.action-description ➊

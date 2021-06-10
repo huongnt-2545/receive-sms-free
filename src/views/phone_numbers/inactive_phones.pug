@@ -1,0 +1,40 @@
+extend ../layout/application.pug
+block extra_stylesheet
+  link(type='text/css' rel='stylesheet' href='/css/inactive-phone-number.css')
+  link(type='text/css' rel='stylesheet' href='/css/detail-country.css')
+block content
+  .contain.margin-top-100.important-height-auto
+    .nybanner(style='background-image:url(/images/cj0-2.jpg);')
+      .ny-title
+        h2.wow.bounceInDown.animated(style='visibility: visible; animation-name: bounceInDown;')= t('phone_numbers.inactive.invalid_phone_number')
+        h3.wow.fadeInUp.animated(style='visibility: visible; animation-name: fadeInUp;')= t('phone_numbers.inactive.phones_are_offline')
+    .navigation
+      .layout
+        a.home(href='/')= t('phone_numbers.inactive.receive_sms_onl')
+        em &gt;
+        a.on(href='/inactive-phone-numbers')= t('phone_numbers.inactive.invalid_phone_number')
+    .news-warp.important-height-auto
+      .layout.important-height-auto
+        .index-title.wow.fadeInUp.animated.animate-item.important-height-auto(data-wow-delay='0.0s')
+          span= t('phone_numbers.inactive.use_free_phone_number')
+          p
+            i.use-phone-step &#x278A;
+            = t('countries.show.select_free_number')
+          p
+            i.use-phone-step &#x278B;
+            = t('countries.show.fill_in_number')
+          p
+            i.use-phone-step &#x278C;
+            = t('countries.show.click_receive_sms')
+        .index-case.margin-top-30.important-height-auto
+          ul#ul.clearfix.important-height-auto
+            each inactivePhone in inactivePhoneNumbers
+              li.wow.fadeInUp.animated.animate-item(data-wow-delay='0s')
+                .pic
+                  img(src='/images/flags/us.png')
+                a(href='/phone-number/' + inactivePhone.phone_number)
+                  h2.h2
+                    span +#{inactivePhone.country_id.dial_code} #{inactivePhone.phone_number}
+                      i= t('countries.show.receive_sms')
+            else
+              p.font-size-20.text-center= t('phone_numbers.inactive.have_not_phone_numbers')

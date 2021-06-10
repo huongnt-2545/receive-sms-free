@@ -1,7 +1,7 @@
-import express from 'express';
-import * as  phoneController from '../controllers/phoneNumber.controller';
-const router = express.Router();
+import { Router } from 'express';
+import { getMessages } from '../controllers/phoneNumber.controller';
+const router = Router();
 
-router.get('/:phone', phoneController.getMessages);
+router.get('/:phone', getMessages);
 
 export default router;
