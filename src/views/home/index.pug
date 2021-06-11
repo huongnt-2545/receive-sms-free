@@ -1,0 +1,63 @@
+extend ../layout/application.pug
+
+block extra_stylesheet
+  link(type='text/css' rel='stylesheet' href='/css/home.css')
+
+block extra_script
+  script(type='text/javascript' src='js/number.js')
+  script(type='text/javascript' src='js/home/statistic.js')
+
+block content
+  .contain
+      .bannerwarp
+        .scrollBar
+          .nybanner(style='background-image: url(images//cj0-2.jpg)')
+            .ny-title
+              a(href='https://play.google.com/store/apps/details?id=com.receivesms.online' target='_blank')
+                img(src='images//google-play.png' height='60' alt=t('home.receive_sms_onl'))
+          .index-waper-box
+            .index-back-box.digital
+              .sub-mouse
+                span
+                  img(src='images/sub-mouse.png')
+              .IndexList.active
+                ul
+                  li
+                    b
+                      em#count-number.nub.timer(data-to='30' data-speed='1500') 30
+                    span.pd
+                      span.pd + #{t('home.countries')}
+                  li
+                    b
+                      em#count-number.nub.timer(data-to='200' data-speed='1500') 200
+                    span.pd
+                      span.pd + #{t('home.phone_numbers')}
+                  li
+                    b
+                      em#count-number.nub.timer(data-to='50000' data-speed='1500') 50000
+                    span.pd
+                      span.pd + #{t('home.text_messages')}
+      .section02
+        .layout
+          .index-title.wow.fadeInUp(data-wow-delay='0.0s')
+            span #{t('home.receive_sms_onl')}
+            | #{t('home.receive_sms_onl_note')}
+          .index-case
+            ul.clearfix
+              each phone in phoneNumbers
+                li.wow.fadeInUp(data-wow-delay='0s')
+                  .pic
+                    img(alt=t('home.country_phone_number', {country: phone.country.name}) src=phone.country.image)
+                    .btn-group.trans
+                      a.details_btn.trans(href='/regions/' + phone.country.code)
+                       | #{t('home.country_phone_number', {country: phone.country.name})}
+                      a.link_btn.trans(href='/phone-number/' + phone.phoneNumber, target='_blank') #{t('shared.receive_sms_onl')}
+                  a(href='/phone-number/' + phone.phoneNumber, target='_blank')
+                    h2.h2
+                      span +#{phone.country.dial_code} #{phone.phoneNumber}
+                      i #{t('home.receive_sms')}
+              else
+                p.font-size-20(style='text-align: center')= t('countries.show.have_not_phone_numbers')
+
+              div(style='clear: both')
+            a.indexmore(href='/regions/') #{t('shared.receive_sms_onl')}
