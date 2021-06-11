@@ -15,3 +15,9 @@ export const getPhoneNumberByCountry = async (countryId: string): Promise<IPhone
 
   return phoneNumbers;
 }
+
+export const getRandomPhoneNumber = async (Id: string): Promise<IPhoneNumber | null> => {
+  const validPhone = await PhoneNumber.find({_id: {$ne: Id}, is_active: true});
+  const random = Math.floor(Math.random() * validPhone.length);
+  return validPhone[random];
+};

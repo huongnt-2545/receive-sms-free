@@ -31,6 +31,12 @@
       "click_receive_sms": "  Click \"Receive SMS\" & wait one min for SMS",
       "receive_sms": "Receive SMS",
       "have_not_phone_numbers": "Have not any phone number!"
+    },
+    "form": {
+      "name": "Name",
+      "code": "Code",
+      "dial_code": "Dial code",
+      "submit": "Submit"
     }
   },
   "home": {
@@ -48,6 +54,24 @@
       "base_message": "Unable to find the requested resource!"
     },
     "internal_server_err": "Something went wrong!!!",
-    "receive_sms_onl": "  Receive SMS online"
+    "receive_sms_onl": "  Receive SMS online",
+    "no_data": "No data",
+    "number_of_errors": "There are {{count}} errors occured"
+  },
+  "validations": {
+    "country": {
+      "code": {
+        "not_empty": "Code does not empty",
+        "exist": "Code already exists",
+        "incorrect_format": "Code is incorrect format"
+      },
+      "name": {
+        "not_empty": "Name does not empty"
+      },
+      "dial_code": {
+        "not_empty": "Dial does not empty",
+        "exist": "Dial code already exists"
+      }
+    }
   }
 }

@@ -1,0 +1,19 @@
+include ../../shared/flashMessage
+
+mixin showFormCountry(formData, errors)
+  +showErrorMessage(errors)
+  form(action=(formData && formData.countryCode ? ('/admin/countries/' + formData.countryCode) : '/admin/countries'), method='POST')
+    .form-group.required
+      if formData && formData.method
+        input(type='hidden' name='_method' value= formData.method)
+      if formData && formData.id
+        input(type='hidden' name='id' value= formData.id)
+      label(for='name')= t('countries.form.name')
+      input#name.form-control(name='name' value= formData ? formData.name : '')
+    .form-group.required
+      label(for='code')= t('countries.form.code')
+      input#code.form-control(name='code' value= formData ? formData.code : '')
+    .form-group.required
+      label(for='dial_code')= t('countries.form.dial_code')
+      input#dial_code.form-control(name='dial_code' value= formData ? formData.dial_code : '')
+    button.btn.btn-default(type='submit')= t('countries.form.submit')
