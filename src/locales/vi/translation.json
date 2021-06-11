@@ -33,11 +33,21 @@
       "have_not_phone_numbers": "Have not any phone numbers!"
     }
   },
+  "home": {
+    "country_phone_number": "{{country}} Phone Number",
+    "receive_sms": "Receive SMS",
+    "receive_sms_onl": "Receive SMS online free",
+    "receive_sms_onl_note": "Receive SMS online anonymously and fast, without register or a mobile phone",
+    "countries": "Countries",
+    "phone_numbers": "Phone Numbers",
+    "text_messages": "Text Messages"
+  },
   "shared": {
     "not_found": {
       "phone_number": "Can't find phone number",
       "base_message": "Unable to find the requested resource!"
     },
-    "internal_server_err": "Something went wrong!!!"
+    "internal_server_err": "Something went wrong!!!",
+    "receive_sms_onl": "Receive SMS online"
   }
 }
