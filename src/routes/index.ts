@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 const routes = express.Router();
 import phoneNumber from './phoneNumber.route';
 import home from './home.route';

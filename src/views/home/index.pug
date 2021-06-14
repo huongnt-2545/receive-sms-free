@@ -24,17 +24,17 @@ block content
                 ul
                   li
                     b
-                      em#count-number.nub.timer(data-to='30' data-speed='1500') 30
+                      em#count-number.nub.timer(data-to=statistic.countries data-speed='1500') #{statistic.countries}
                     span.pd
                       span.pd + #{t('home.countries')}
                   li
                     b
-                      em#count-number.nub.timer(data-to='200' data-speed='1500') 200
+                      em#count-number.nub.timer(data-to=statistic.phoneNumbers data-speed='1500') #{statistic.phoneNumbers}
                     span.pd
                       span.pd + #{t('home.phone_numbers')}
                   li
                     b
-                      em#count-number.nub.timer(data-to='50000' data-speed='1500') 50000
+                      em#count-number.nub.timer(data-to=statistic.textMessages data-speed='1500') #{statistic.textMessages}
                     span.pd
                       span.pd + #{t('home.text_messages')}
       .section02
