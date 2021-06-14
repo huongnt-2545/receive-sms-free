@@ -1,19 +1,24 @@
-extend layout/application.pug
+extend ../../layout/application.pug
 block extra_stylesheet
   link(type='text/css' rel='stylesheet' href='/css/detail-phone.css')
+  link(type='text/css' rel='stylesheet' href='/css/admin/phone-number.css')
 block extra_script
-  script(type='text/javascript' src='/js/custom.js')
+    script(type='text/javascript', src="/js/phone_number.js")
 block content
   .contain
       .casedetails
         .layout
           .case-tou.clearfix
-            .name(style='border: 0; width: 100%; text-align: center')
-              p.phone-country
+            .name(style='border: 0; text-align:center; width: 100%')
+              h1.phone-country
                 a(href=`/regions/${country.code}`)= country.name
-              h1.copys.btn2.phone-number
-                = phoneNumber
-              p#copystate(style='margin-bottom: 10px')= t('phone_messages.click_to_copy')
+              div
+                h2.copys.btn2.phone-number= phoneNumber.phone_number
+                button#admin-change-status(class= phoneNumber.is_active ? 'status-active' : 'status-inactive'
+                  , phone-id= phoneNumber._id, phone-status= phoneNumber.is_active ? 'true' : 'false'
+                  , title= t("admin.phone_numbers.index.change_status_title", {action: phoneNumber.is_active ? 'inactive' : 'active'}))
+                  img(src='/images/' + (phoneNumber.is_active ? 'status1.png' : 'status0.png'))
+              p#copystate.margin-bottom-10= t('phone_messages.click_to_copy')
               p
                 span.action-description ➊
                 = t('phone_messages.refresh_get_new_message')
@@ -28,7 +33,7 @@ block content
                   b= t('phone_messages.update_latest_sms')
               p= t('phone_messages.list_messages', { count: messages.length })
               div.update-latest-sms
-                button.btn-primary.btn.btn-change-phone(random-phone= randomPhone.phone_number)
+                button.btn-primary.btn.btn-change-phone(random-phone= randomPhone.phone_number, class="admin-change-phone")
                   b= t('phone_messages.change_phone_number')
               p= t('phone_messages.please_change_a_number')
           .casetext
