@@ -1,0 +1,29 @@
+#change-status {
+  border: none;
+  width: 100%;
+}
+
+#admin-change-status {
+  border: none;
+}
+
+.status-inactive {
+  background-color: #E0E0E0;
+}
+.status-inactive:hover {
+  background-color: #C0C0C0;
+  outline: none;
+}
+
+.status-active {
+  background-color: #CCFFFF;
+}
+
+.status-active:hover {
+  background-color: #CCE5FF;
+  outline: none;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}

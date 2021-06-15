@@ -5,16 +5,18 @@ import * as messageService from '../services/message.service';
 import { getRandomPhoneNumber } from '../services/phoneNumber.service';
 
 export const getMessages = async (req: Request, res: Response) => {
-  const phoneNumber = await PhoneNumber.findOne({phone_number: req.params.phone}).populate('country_id');
+  const phoneNumber = await PhoneNumber.findOne({ phone_number: req.params.phone }).populate('country_id');
   if (!phoneNumber) return res.status(404).send(req.t('shared.not_found.phone_number'));
 
   const messages = await messageService.getMessagesByPhone(phoneNumber._id);
-  const randomPhone = await getRandomPhoneNumber(phoneNumber._id);
+  const validPhone = await PhoneNumber.find({ _id: { $ne: phoneNumber._id }, is_active: true });
+  const randomPhone = await getRandomPhoneNumber(phoneNumber._id, validPhone);
   const params = {
     phoneNumber: req.params.phone,
     messages: messages,
     country: phoneNumber.country_id,
-    randomPhone: randomPhone ? randomPhone : phoneNumber
-  }
+    randomPhone: randomPhone ? randomPhone : phoneNumber,
+  };
+
   res.render('phone_messages', params);
 };

@@ -1,0 +1,31 @@
+extend ../../layout/application.pug
+block extra_stylesheet
+  link(type='text/css' rel='stylesheet' href='/css/detail-country.css')
+  link(type='text/css' rel='stylesheet' href='/css/admin/phone-number.css')
+block extra_script
+  script(type='text/javascript' src='/js/phone_number.js')
+block content
+  .contain(style='height: auto !important; margin-top: 100px')
+    .news-warp
+      .layout.phone-numbers-list
+        .index-title.wow
+          h1.phone-number-title List phone numbers
+          p.margin-top-10
+      .layout
+        .index-case.margin-top-30
+          ul(class='clearfix' id='ul')
+            each phone in phoneNumbers
+              li.wow.fadeInUp(data-wow-delay='0s')
+                div.pic
+                  img(src='/images/flags/us.png')
+                a(href='/admin/phone-numbers/' + phone.phone_number
+                  , title= t("admin.phone_numbers.index.detail_title"))
+                  h2.h2
+                    span +#{phone.country_id.dial_code} #{phone.phone_number}
+                    i= t('countries.show.receive_sms')
+                button#change-status(class= phone.is_active ? 'status-active' : 'status-inactive'
+                  , phone-id= phone._id, phone-status= phone.is_active ? 'true' : 'false'
+                  , title= t("admin.phone_numbers.index.change_status_title", {action: phone.is_active ? 'inactive' : 'active'}))
+                  img(src='/images/' + (phone.is_active ? 'status1.png' : 'status0.png'))
+            else
+              p.font-size-20(style='text-align: center')= t('countries.show.have_not_phone_numbers')

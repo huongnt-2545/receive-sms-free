@@ -160,7 +160,7 @@
     "@types/qs" "*"
     "@types/range-parser" "*"
 
-"@types/express@^4.17.11":
+"@types/express@*", "@types/express@^4.17.11":
   "integrity" "sha512-no+R6rW60JEc59977wIxreQVsIEOAYwgCqldrA/vkpCnbD7MqTefO97lmoBe4WE0F156bC4uLSP1XHDOySnChg=="
   "resolved" "https://registry.npmjs.org/@types/express/-/express-4.17.11.tgz"
   "version" "4.17.11"
@@ -181,6 +181,13 @@
   "integrity" "sha512-cxWFQVseBm6O9Gbw1IWb8r6OS4OhSt3hPZLkFApLjM8TEXROBuQGLAH2i2gZpcXdLBIrpXuTDhH7Vbm1iXmNGA=="
   "resolved" "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.7.tgz"
   "version" "7.0.7"
+
+"@types/method-override@0.0.31":
+  "integrity" "sha512-aLA4MGzjYjBHGpr5TgAdPRyX97Jd+xlWN2wa6PbsjKYeoUKPsxVDFRSTjI3YG4MvGg3ZJkdMxjAXZfujU9qEPw=="
+  "resolved" "https://registry.npmjs.org/@types/method-override/-/method-override-0.0.31.tgz"
+  "version" "0.0.31"
+  dependencies:
+    "@types/express" "*"
 
 "@types/mime@^1":
   "integrity" "sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw=="
@@ -447,7 +454,7 @@
   "resolved" "https://registry.npmjs.org/bluebird/-/bluebird-3.5.1.tgz"
   "version" "3.5.1"
 
-"body-parser@1.19.0":
+"body-parser@^1.19.0", "body-parser@1.19.0":
   "integrity" "sha512-dhEPs72UPbDnAQJ9ZKMNTP6ptJaionhP5cBb541nXPlW60Jepo9RV/a4fX4XWW9CuFNK22krhrj1+rgzifNCsw=="
   "resolved" "https://registry.npmjs.org/body-parser/-/body-parser-1.19.0.tgz"
   "version" "1.19.0"
@@ -1020,6 +1027,14 @@
   "integrity" "sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc="
   "resolved" "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz"
   "version" "1.8.1"
+
+"express-validator@^6.11.1":
+  "integrity" "sha512-XAMdu1P6RESd8bvKtNdgNPsW+abkY6UQ2EVUqPpK6QVqieZKaLrN7W/zeFzDWZmgAy/RPEW8M4KYXMqQk6GmTA=="
+  "resolved" "https://registry.npmjs.org/express-validator/-/express-validator-6.11.1.tgz"
+  "version" "6.11.1"
+  dependencies:
+    "lodash" "^4.17.21"
+    "validator" "^13.5.2"
 
 "express@^4.17.1":
   "integrity" "sha512-mHJ9O79RqluphRrcw2X/GTh3k9tVv8YcoyY4Kkh4WDMUYKRZUq0h1o0w2rrrxBqM7VoeUVqgb27xlEMXTnYt4g=="
@@ -1699,6 +1714,16 @@
   "resolved" "https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz"
   "version" "1.4.1"
 
+"method-override@^3.0.0":
+  "integrity" "sha512-IJ2NNN/mSl9w3kzWB92rcdHpz+HjkxhDJWNDBqSlas+zQdP8wBiJzITPg08M/k2uVvMow7Sk41atndNtt/PHSA=="
+  "resolved" "https://registry.npmjs.org/method-override/-/method-override-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "debug" "3.1.0"
+    "methods" "~1.1.2"
+    "parseurl" "~1.3.2"
+    "vary" "~1.1.2"
+
 "methods@~1.1.2":
   "integrity" "sha1-VSmk1nZUE07cxSZmVoNbD4Ua/O4="
   "resolved" "https://registry.npmjs.org/methods/-/methods-1.1.2.tgz"
@@ -1862,9 +1887,9 @@
   "version" "3.0.0"
 
 "normalize-url@^4.1.0":
-  "integrity" "sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ=="
-  "resolved" "https://registry.npmjs.org/normalize-url/-/normalize-url-4.5.0.tgz"
-  "version" "4.5.0"
+  "integrity" "sha512-9UZCFRHQdNrfTpGg8+1INIg93B6zE0aXMVFkw1WFwvO4SlZywU6aLg5Of0Ap/PgcbSw4LNxvMWXMeugwMCX0AA=="
+  "resolved" "https://registry.npmjs.org/normalize-url/-/normalize-url-4.5.1.tgz"
+  "version" "4.5.1"
 
 "object-assign@^4.1.1":
   "integrity" "sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM="
@@ -1931,7 +1956,7 @@
   dependencies:
     "callsites" "^3.0.0"
 
-"parseurl@~1.3.3":
+"parseurl@~1.3.2", "parseurl@~1.3.3":
   "integrity" "sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ=="
   "resolved" "https://registry.npmjs.org/parseurl/-/parseurl-1.3.3.tgz"
   "version" "1.3.3"
@@ -2702,6 +2727,11 @@
   "integrity" "sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA=="
   "resolved" "https://registry.npmjs.org/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz"
   "version" "2.3.0"
+
+"validator@^13.5.2":
+  "integrity" "sha512-gVgKbdbHgtxpRyR8K0O6oFZPhhB5tT1jeEHZR0Znr9Svg03U0+r9DXWMrnRAB+HtCStDQKlaIZm42tVsVjqtjg=="
+  "resolved" "https://registry.npmjs.org/validator/-/validator-13.6.0.tgz"
+  "version" "13.6.0"
 
 "vary@~1.1.2":
   "integrity" "sha1-IpnwLG3tMNSllhsLn3RSShj2NPw="

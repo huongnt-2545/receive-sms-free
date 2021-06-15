@@ -48,6 +48,22 @@
     "phone_numbers": "Phone Numbers",
     "text_messages": "Text Messages"
   },
+  "phone_numbers": {
+    "show": {
+      "status": {
+        "offline": "Offline",
+        "online": "Online"
+      }
+    }
+  },
+  "admin": {
+    "phone_numbers": {
+      "index": {
+        "change_status_title": "Click to {{action}} this phone number",
+        "detail_title": "Click to view detail"
+      }
+    }
+  },
   "shared": {
     "not_found": {
       "phone_number": "Can't find phone number",
