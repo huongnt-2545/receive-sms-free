@@ -1,0 +1,36 @@
+//- Pagination
+mixin pagination(pagingData)
+    if pagingData.totalPages > 1
+        - var i = pagingData.page > 5 ? pagingData.page - 4 : 1
+        ul.pagination
+            if pagingData.page == 1
+                li.disabled
+                    a
+                        span  &laquo;
+            else
+                li
+                    a(href="?page=1")
+                        span &laquo;
+
+            if i !== 1
+                li.disabled
+                    a ...
+            - for (; i <= pagingData.page + 4 && i <= pagingData.totalPages; i++)
+                if (i == pagingData.page)
+                    li.active
+                        a #{i}
+                else
+                    li
+                        a(href=`?page=${i}`)= i
+                if i == pagingData.page + 4 && i < pagingData.totalPages
+                    li.disabled
+                        a ...
+
+            if pagingData.page == pagingData.totalPages
+                li.disabled
+                    a
+                        span &raquo;
+            else
+                li
+                    a(href=`?page=${pagingData.totalPages}`)
+                        span &raquo;

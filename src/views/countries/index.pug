@@ -1,4 +1,6 @@
 extend ../layout/application
+include ../mixins/pagination
+
 block content
   .contain
       .casedetails
@@ -6,7 +8,7 @@ block content
           .case-tou.clearfix
             .index-case
               ul#ul.clearfix
-                each country in countries
+                each country in countryData.docs
                   li.wow.fadeInUp
                     .pic
                       img(src='/images/flags/us.png')
@@ -15,3 +17,4 @@ block content
                         span= country.name
                 else
                   li= t('shared.not_data')
+            +pagination(countryData)
